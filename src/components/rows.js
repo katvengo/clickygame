@@ -30,16 +30,20 @@ class Rows extends React.Component {
 
       //Doesn't work
       //reset game by changing all boolean values of clicked to false
-       resetClicked = (event, clicked) => {
-        michael.forEach(function(imageObject){
-        if(imageObject.image === event.target.src){
-        this.setState({
-          [clicked]: false
-        })
-        }
-      })
-    }
+    //    resetClicked = (event, clicked) => {
+    //     michael.forEach(function(imageObject){
+    //     if(imageObject.image === event.target.src){
+    //     this.setState({
+    //       [clicked]: false
+    //     })
+    //     }
+    //   })
+    // }
 
+ resetData = michael => {
+    const resetData = michael.map(item => ({ ...item, clicked: false }));
+    return this.shuffleData(resetData);
+  };
       resetGame = () => {
         this.setState({count: 0})
       }
@@ -55,9 +59,8 @@ class Rows extends React.Component {
       this.shuffledArray(michael)
     } else if (findId.clicked === true){
       alert("Incorrect Answer!")
-
+       this.resetData()
       // var score = this.state.count
-
       // this.resetClicked()
       this.resetGame()
       michael.forEach(() => michael.clicked = false)
