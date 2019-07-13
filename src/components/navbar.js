@@ -7,7 +7,12 @@ const styles = {
   subtitle: {
     fontFamily: 'Acme', 
     fontSize: 25,
-    color: 'black'
+    color: 'black',
+  
+  },
+  span: {
+    paddingLeft: 25,
+    paddingRight: 10
   }
 
 };
@@ -37,7 +42,8 @@ ClickyGame      </a>
 
     <div className="navbar-end">
       <div className="navbar-item" style={styles.subtitle}>
-         Score: {props.count} 
+         <span style={styles.span}>Score: {props.count} </span>
+         <span style={styles.span}>Highest Score:</span>
       </div>
     </div>
 </nav>

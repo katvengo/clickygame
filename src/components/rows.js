@@ -83,16 +83,15 @@ class Rows extends React.Component {
 
 export default Rows;
 
-// Look up document .onClick for each card in order to introduce the logic 
+//Almost there!! 
+//I have to reset all michael.clicked to false so that the game doesn't give incorrect answer
+//when it restarts (using a forEach? on the boolean values i assume)
 
-//When you click on an image
-//if(imageClickedForFirstTimee) =>  Increase points
-//if(ImageClickedforSecondTime) => reset score 
+//I need to keep track of all of the scores and only output the highest score
+//state => Need a totalScores: [] array. Before the game resets push the count number
+//into the totalScores array. Then use a function to figure out the highest number (go to code challenges for options)
 
-//handleShuffle when component mounts 
-//handleShuffle = (event) => Math.random//with array of images forEach to iterate over the cards.
-//push shuffled cards into new array (displayArray)
-//displayArray will then populate images onto the cards? 
-//{Math.floor(Math.random() * 10) + 1},{Math.floor(Math.random() * 10) + 1},
-//
+//Display an alert when a user gets a total score of 12 
+
+//Set up Heroku and deploy site 
 
