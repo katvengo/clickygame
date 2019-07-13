@@ -8,7 +8,8 @@ class Rows extends React.Component {
     state = { 
         michael: '',
         count: 0,
-        imageClicked: []
+        imageClicked: [],
+        totalScores: []
      }
      
 
@@ -32,6 +33,9 @@ class Rows extends React.Component {
       findId.clicked = true
       this.shuffledArray(michael)
     } else if (findId.clicked === true){
+     // this.totalScores.push(this.state.count)
+     //doesn't work need a function 
+      console.log(this.totalScores)
       alert("Incorrect Answer!")
       this.resetGame()
       michael.forEach(() => michael.clicked = false)

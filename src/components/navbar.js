@@ -43,7 +43,7 @@ ClickyGame      </a>
     <div className="navbar-end">
       <div className="navbar-item" style={styles.subtitle}>
          <span style={styles.span}>Score: {props.count} </span>
-         <span style={styles.span}>Highest Score:</span>
+         <span style={styles.span}>Highest Score: {props.totalScore}</span>
       </div>
     </div>
 </nav>
