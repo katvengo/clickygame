@@ -1,8 +1,8 @@
 import React from 'react';
 import Card from './Card/card'
 import michael from "../michael.json"
-
-
+import Navbar from "./navbar"
+import Hero from "./hero"
 
 class Rows extends React.Component {
     state = { 
@@ -10,12 +10,14 @@ class Rows extends React.Component {
         count: 0,
         imageClicked: []
      }
-     handleIncrement = () => {
-        // We always use the setState method to update a component's state
+     
+
+     handleCount = () => {
         this.setState({ count: this.state.count + 1 });
       };
 
-      resetGame= () => {
+
+      resetGame = () => {
         this.setState({count: 0})
       }
     
@@ -25,13 +27,14 @@ class Rows extends React.Component {
      //Add find to figure out which id is being clicked
     const findId = michael.find(imageObject => imageObject.image === event.target.src)
     if (findId.clicked === false){
-      this.handleIncrement()
+      this.handleCount()
       console.log(this.state.count)
       findId.clicked = true
       this.shuffledArray(michael)
     } else if (findId.clicked === true){
       alert("Incorrect Answer!")
       this.resetGame()
+      michael.forEach(() => michael.clicked = false)
       this.shuffledArray(michael)
     }
     return 
@@ -53,7 +56,11 @@ class Rows extends React.Component {
     render() { 
         return ( 
             <>
-            
+
+        <Navbar 
+          count={this.state.count} 
+          />
+        <Hero />
         <div className ="container is-fluid">
         <div className ="columns is-centered is-multiline">
   
