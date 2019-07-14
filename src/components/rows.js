@@ -4,12 +4,13 @@ import michael from "../michael.json"
 import Navbar from "./navbar"
 import Hero from "./hero"
 
-class Rows extends React.Component {
+var highestScore = []
 
+class Rows extends React.Component {
     state = { 
-        michael: '',
+        cards: michael,
         count: 0,
-        totalScores: [],
+        highestScore: 0,
         clicked: false
      }
      //Doesn't work
@@ -20,57 +21,57 @@ class Rows extends React.Component {
        }
      }
 
-     //track scores. Keep a total of all scores and post the highest
-
-
 
      handleCount = () => {
         this.setState({ count: this.state.count + 1 });
       };
 
-      //Doesn't work
-      //reset game by changing all boolean values of clicked to false
-    //    resetClicked = (event, clicked) => {
-    //     michael.forEach(function(imageObject){
-    //     if(imageObject.image === event.target.src){
-    //     this.setState({
-    //       [clicked]: false
-    //     })
-    //     }
-    //   })
-    // }
+ resetData = () => {
+   const cards = this.state.cards.map( card => ({...card, clicked: false}))
+  this.setState({
+    cards
+  })
 
- resetData = michael => {
-    const resetData = michael.map(item => ({ ...item, clicked: false }));
-    return this.shuffleData(resetData);
-  };
+   };
+
       resetGame = () => {
         this.setState({count: 0})
       }
     
+       arrayNum = array => {
+        return Math.max(...array)
+        }
+
+    showHighestScore = () => {   
+     this.setState({
+       highestScore: this.state.highestScore
+     })
+    }      
+
     handleClickEvent = event => {
-       event.preventDefault()
-     const findId = michael.find(imageObject => imageObject.image === event.target.src)
+      event.preventDefault()
+      const findId = this.state.cards.find(imageObject => imageObject.image === event.target.src)
     if (findId.clicked === false){
       this.handleCount()
       this.checkForWinner()
       console.log(this.state.count)
       findId.clicked = true
-      this.shuffledArray(michael)
+      this.shuffledArray(this.state.cards)
     } else if (findId.clicked === true){
       alert("Incorrect Answer!")
-       this.resetData()
-      // var score = this.state.count
-      // this.resetClicked()
+      this.resetData()
+      var score = this.state.count
+      highestScore.push(score)
+      console.log("highest score" + this.arrayNum(highestScore))
+      this.showHighestScore()
       this.resetGame()
-      michael.forEach(() => michael.clicked = false)
-      this.shuffledArray(michael)
+      this.shuffledArray(this.state.cards)
     }
     return 
    }
 
 
-     shuffledArray = array => {
+      shuffledArray = array => {
         let i = array.length - 1;
         for (; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
@@ -88,6 +89,7 @@ class Rows extends React.Component {
 
         <Navbar 
           count={this.state.count} 
+          highestScore={this.highestScore}
           />
         <Hero />
         <div className ="container is-fluid">
