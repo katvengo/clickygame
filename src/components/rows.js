@@ -4,7 +4,7 @@ import michael from "../michael.json"
 import Navbar from "./navbar"
 import Hero from "./hero"
 
-var highestScore = []
+var totalScores = []
 
 class Rows extends React.Component {
     state = { 
@@ -61,8 +61,8 @@ class Rows extends React.Component {
       alert("Incorrect Answer!")
       this.resetData()
       var score = this.state.count
-      highestScore.push(score)
-      console.log("highest score" + this.arrayNum(highestScore))
+      totalScores.push(score)
+      console.log("highest score" + this.arrayNum(totalScores))
       this.showHighestScore()
       this.resetGame()
       this.shuffledArray(this.state.cards)
