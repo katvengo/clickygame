@@ -89,7 +89,7 @@ class Rows extends React.Component {
 
         <Navbar 
           count={this.state.count} 
-          highestScore={this.highestScore}
+          highestScore={this.state.highestScore}
           />
         <Hero />
         <div className ="container is-fluid">

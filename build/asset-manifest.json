@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/dundermifflinmemorygame/static/css/main.ccc81bf0.chunk.css",
+    "main.js": "/dundermifflinmemorygame/static/js/main.a5b8efd2.chunk.js",
+    "main.js.map": "/dundermifflinmemorygame/static/js/main.a5b8efd2.chunk.js.map",
+    "runtime~main.js": "/dundermifflinmemorygame/static/js/runtime~main.bfd0cc0b.js",
+    "runtime~main.js.map": "/dundermifflinmemorygame/static/js/runtime~main.bfd0cc0b.js.map",
+    "static/js/2.98410570.chunk.js": "/dundermifflinmemorygame/static/js/2.98410570.chunk.js",
+    "static/js/2.98410570.chunk.js.map": "/dundermifflinmemorygame/static/js/2.98410570.chunk.js.map",
+    "index.html": "/dundermifflinmemorygame/index.html",
+    "precache-manifest.d7a1a589c1c2dcbf4e3efc4dce160e57.js": "/dundermifflinmemorygame/precache-manifest.d7a1a589c1c2dcbf4e3efc4dce160e57.js",
+    "service-worker.js": "/dundermifflinmemorygame/service-worker.js",
+    "static/css/main.ccc81bf0.chunk.css.map": "/dundermifflinmemorygame/static/css/main.ccc81bf0.chunk.css.map",
+    "static/media/notebook.png": "/dundermifflinmemorygame/static/media/notebook.4fdde868.png"
+  }
+}
